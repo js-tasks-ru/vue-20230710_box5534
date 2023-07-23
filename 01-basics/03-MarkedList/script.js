@@ -42,12 +42,11 @@ const App = defineComponent({
   computed: {
     filteredEmails() {
       const search = this.searchStr.toLowerCase();
-      const arr = [];
-      this.emails.map(function (email) {
-        arr.push({
+      const arr = this.emails.map(function (email) {
+        return {
           isMarked: email.toLowerCase().indexOf(search) !== -1,
           email: email,
-        });
+        }
       });
       return arr;
     },
