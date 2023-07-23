@@ -43,7 +43,7 @@ const App = defineComponent({
     filteredEmails() {
       const search = this.searchStr.toLowerCase();
       const arr = [];
-      this.emails.forEach(function (email) {
+      this.emails.map(function (email) {
         arr.push({
           isMarked: email.toLowerCase().indexOf(search) !== -1,
           email: email,
